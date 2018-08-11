@@ -1,0 +1,5 @@
+/* I don't think I'll have too much styling so just one top level file for now */
+
+:global .test{
+    border-style:solid;
+}

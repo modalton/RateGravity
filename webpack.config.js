@@ -1,10 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
-const APP_DIR = path.resolve(__dirname, "./src/client/");
-
-console.log(APP_DIR);
-
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
   filename: "./index.html"
@@ -24,6 +20,10 @@ module.exports = {
             presets: ["react", "env"]
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
