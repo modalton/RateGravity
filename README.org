@@ -1,0 +1,28 @@
+* RateGravity Takehome
+** Installation
+   After you've enter the cloned directory, enter the following:
+   #+BEGIN_SRC sh :results output
+   npm i
+   #+END_SRC
+** Build and Deploy
+   Build the application by entering the following:
+   #+BEGIN_SRC sh :results output
+   npm run build
+   #+END_SRC
+
+   Finally, spin up the site with the following:
+   #+BEGIN_SRC sh :results output
+   npm start
+   #+END_SRC
+   And navigate to localhost:8000
+** Testing and More
+   To run the test suite enter the following:
+   #+BEGIN_SRC sh :results output
+   npm test
+   #+END_SRC
+
+   If you'd like to make live changes to the code you can enable hot reloading with the following:
+   #+BEGIN_SRC sh :results output
+   npm run devpack
+   #+END_SRC
+ 
