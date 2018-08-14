@@ -1,4 +1,4 @@
-// Container CSS
+/*  Container CSS  */
 .RQ-container{
     margin:0px auto;
     max-width:800px;
@@ -6,7 +6,7 @@
     margin-top:25px;
 }
 
-// Table CSS
+/*  Table CSS  */
 table{
         border-collapse:collapse;
 }
@@ -22,7 +22,7 @@ td,  th {
     text-align: center;
 }
 
-//RQ Form CSS
+/* RQ Form CSS  */
 .rate-form-form{
     border : 1px solid;
     box-shadow: 3px 6px #c5c5c5;
@@ -60,10 +60,11 @@ td,  th {
     display:inline-block;
 }
 
-// Loader/Error items in RQForm CSS
 
+/*  Loader/Error label/spinner in RQForm CSS  */
 .loader-container{
     display:inline-block;
+    vertical-align:middle;
 }
 
 .loader {
@@ -93,7 +94,7 @@ td,  th {
 }
 
 
-// Responsive CSS 
+/*  Responsive CSS  */
 @media only screen and (max-width: 720px) {
     .rate-form-form{
         display:inline-block;

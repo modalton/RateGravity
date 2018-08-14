@@ -5,6 +5,12 @@
    npm i
    #+END_SRC
 ** Build and Deploy
+   Create a .env file at the root of your newly cloned directory. Set the attirbute API_KEY to your respective key.
+   #+BEGIN_EXAMPlE :results output
+   API_KEY=*YOUR_KEY_HERE*
+   #+END_EXAMPLE
+
+
    Build the application by entering the following:
    #+BEGIN_SRC sh :results output
    npm run build
