@@ -1,9 +1,15 @@
+const dotenv = require("dotenv").config();
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 const path = require("path");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
   filename: "./index.html"
+});
+
+const envPlugin = new webpack.DefinePlugin({
+  API_KEY: JSON.stringify(process.env.API_KEY)
 });
 
 module.exports = {
@@ -27,5 +33,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin]
+  performance: { hints: false },
+  plugins: [htmlPlugin, envPlugin]
 };

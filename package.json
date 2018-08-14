@@ -6,7 +6,8 @@
   "scripts": {
     "devpack": "webpack -w --mode development",
     "build": "webpack --mode production",
-    "test": "node_modules/.bin/mocha --require ./test/setup.js --require ignore-styles --compilers js:babel-core/register ./test/client/"
+    "start": "node ./src/server/index.js",
+    "test": "node_modules/.bin/mocha --require ./test/setup.js --require ignore-styles --require babel-polyfill --require babel-core/register ./test/client/"
   },
   "author": "Michael Dalton",
   "license": "ISC",
@@ -31,12 +32,14 @@
     "react-test-renderer": "^16.4.2",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
+    "redux-saga-test-plan": "^3.7.0",
     "sinon": "^6.1.5",
     "style-loader": "^0.22.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "express": "^4.16.3"
   }
 }

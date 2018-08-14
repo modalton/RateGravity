@@ -9,9 +9,9 @@ export default class RateForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loan_size: "",
-      credit_score: "",
-      property_type: "SingleFamily",
+      loanSize: "",
+      creditScore: "",
+      propertyType: "SingleFamily",
       occupancy: "Primary"
     };
 
@@ -29,7 +29,10 @@ export default class RateForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.JSONSubmit(this.state);
+    const state_copy = this.state;
+    state_copy.creditScore = parseInt(state_copy.creditScore);
+    state_copy.loanSize = parseFloat(state_copy.loanSize);
+    this.props.JSONSubmit(state_copy);
   }
 
   render() {
@@ -39,10 +42,10 @@ export default class RateForm extends Component {
           <div className="form-bar">
             <label>Loan Size: </label>
             <input
-              name="loan_size"
+              name="loanSize"
               type="number"
               onChange={this.handleChange}
-              value={this.state.loan_size}
+              value={this.state.loanSize}
               min="1"
               required
             />
@@ -51,10 +54,10 @@ export default class RateForm extends Component {
           <div className="form-bar">
             <label> Credit Score: </label>
             <input
-              name="credit_score"
+              name="creditScore"
               type="number"
               onChange={this.handleChange}
-              value={this.state.credit_score}
+              value={this.state.creditScore}
               min="300"
               max="850"
               required
@@ -66,7 +69,7 @@ export default class RateForm extends Component {
           <div className="form-bar">
             <label>Property Type: </label>
             <select
-              name="property_type"
+              name="propertyType"
               value={this.state.value}
               onChange={this.handleChange}
             >
@@ -92,6 +95,12 @@ export default class RateForm extends Component {
         </div>
 
         <br />
+        {!this.props.done && (
+          <div className="loader-container">
+            <div className="loader" />
+          </div>
+        )}
+        {this.props.error && <div className="error">Request Error</div>}
         <button type="submit" className="submit-button">
           Quote Rates
         </button>
@@ -101,5 +110,7 @@ export default class RateForm extends Component {
 }
 
 RateForm.propTypes = {
-  JSONSubmit: PropTypes.func.isRequired
+  JSONSubmit: PropTypes.func.isRequired,
+  done: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired
 };
