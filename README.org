@@ -32,3 +32,17 @@
    npm run devpack
    #+END_SRC
  
+** Library Breakdown
+   In broad strokes
+   - Frontend
+     - Redux Saga : Redux middleware for side effects. Used for API requests
+     - CSS/Style loader : Used to collect and inject CSS into React
+   - Testing
+     - Enzyme : Testing utility that makes React testing much simpler.
+     - JSDom : JS emulating DOM. Used with Enzyme to mount React components for testing.
+     - Sinon : Testing utility for stub, mocks, etc. Used to help test.
+     - Redux Sage Test Plan : Used to help test Sagas in a easier, more readable fashion.
+     - Mocha/Chai : Common testing framework and assertion library, respectively. Used to run tests.
+   - Backend
+     - Express : Mostly just used because I'm familiar with it. Used to serve bundle.
+       
